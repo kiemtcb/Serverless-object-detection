@@ -16,5 +16,6 @@ RUN make
 COPY run.sh .
 COPY main.py .
 COPY yolov4.weights .
+COPY yolov4.cfg cfg/
 EXPOSE 8080
 CMD ["sh","./run.sh"]
