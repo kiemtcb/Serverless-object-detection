@@ -14,8 +14,8 @@ COPY darknet detection/darknet
 WORKDIR detection/darknet
 RUN make
 COPY run.sh .
-COPY main.py .
 COPY yolov4.weights .
+COPY main.py .
 COPY yolov4.cfg cfg/
 EXPOSE 8080
-CMD ["sh","./run.sh"]
+CMD ["python3","main.py"]
