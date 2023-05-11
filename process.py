@@ -7,8 +7,7 @@ file_image = ["4K.jpg", "2K.jpg", "FullHD.jpg",
               "HD.jpg", "480p.jpg", "360.jpg"]
 
 
-def measure(file):
-    column = 0
+def measure(file, column):
     for x in range(5):
         row = 0
         address = 'http://mec.default.svc.cluster.local/api/picture'
@@ -31,5 +30,7 @@ def measure(file):
     workbook.close()
 
 
+column = 0
 for x in file_image:
-    measure(x)
+    measure(x, column)
+    column = column + 2
