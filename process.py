@@ -27,7 +27,6 @@ def measure(file, column):
             row += 1
         column += 1
         sleep(45)
-    workbook.close()
 
 
 column = 0
@@ -35,3 +34,4 @@ for x in file_image:
     print(x)
     measure(x, column)
     column = column + 2
+workbook.close()
