@@ -1,0 +1,4 @@
+[submodule "curl"]
+	path = curl
+	url = https://github.com/kiemtcb/Serverless-object-detection.git
+	branch = dodac
