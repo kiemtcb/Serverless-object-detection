@@ -9,6 +9,7 @@ file_image = ["4K.jpg", "2K.jpg", "FullHD.jpg",
 
 def measure(file, column):
     for x in range(5):
+        print("Lan " + x)
         row = 0
         address = 'http://mec.default.svc.cluster.local/api/picture'
         command = 'curl -w @curl-format.txt ' + \
