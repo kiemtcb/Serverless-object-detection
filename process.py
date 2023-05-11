@@ -13,7 +13,7 @@ def measure(file):
         row = 0
         address = 'http://mec.default.svc.cluster.local/api/picture'
         command = 'curl -w @curl-format.txt ' + \
-            '-F ' + file + ' -o /dev/null -s ' + address
+            '-F upload=@' + file + ' -o /dev/null -s ' + address
         time_namelookup = subprocess.getoutput(command)
         result = list(time_namelookup.split(" "))
         for item in result:
