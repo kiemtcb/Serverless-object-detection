@@ -29,9 +29,8 @@ def measure(file, column):
         sleep(45)
 
 
-column = 0
 for x in file_image:
     print(x)
-    measure(x, column)
-    column = column + 2
+    measure(x, 0)
+    worksheet = workbook.add_worksheet()
 workbook.close()
