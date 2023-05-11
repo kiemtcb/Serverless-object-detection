@@ -32,5 +32,6 @@ def measure(file, column):
 
 column = 0
 for x in file_image:
+    print("---")
     measure(x, column)
     column = column + 2
