@@ -4,7 +4,7 @@ from time import sleep
 workbook = xlsxwriter.Workbook('Example2.xlsx')
 worksheet = workbook.add_worksheet()
 file_image = ["4K.jpg", "2K.jpg", "FullHD.jpg",
-              "HD.jpg", "480p.jpg", "360.jpg"]
+              "HD.jpg", "480p.jpg", "360p.jpg"]
 
 
 def measure(file, column):
