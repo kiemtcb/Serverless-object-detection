@@ -28,6 +28,18 @@ def image_detection(image_or_path, network, class_names, class_colors, thresh):
     image = darknet.draw_boxes(detections, image_resized, class_colors)
     return cv2.cvtColor(image, cv2.COLOR_BGR2RGB), detections
 
+@app.route('/api/stream/active/<source>/<int:time>', methods=['GET'])
+def handle_streaming_active_thread_init(source, time):
+    rtmp_streaming_url = source
+    time_to_detect = time
+    try:
+        th = threading.Thread(target=detect_streaming, args=(
+            rtmp_streaming_url,time_to_detect,))
+        th.start()
+    except:
+        print("error")
+    return 'OK', 200
+
 
 @app.route('/api/stream/<source>/<int:time>', methods=['GET'])
 def handle_streaming_thread_init(source, time):
