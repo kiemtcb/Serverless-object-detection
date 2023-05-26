@@ -14,7 +14,7 @@ COPY darknet detection/darknet
 WORKDIR detection/darknet
 RUN make
 COPY run.sh .
-COPY yolov4.weights .
+COPY yolov4-csp.weights .
 COPY main.py .
 COPY yolov4.cfg cfg/
 EXPOSE 8080
