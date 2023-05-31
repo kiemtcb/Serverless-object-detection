@@ -1,0 +1,17 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: detection1
+  namespace: serverless
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/window: 6s
+    spec:
+      containers:
+      - image: docker.io/mc0137/detect_abnormal:arm1.1@sha256:ea4866fffee1c5536c59e0850b4d8acbbdb655a4a575f6fbbe904a0e38e23a27
+        ports:
+        - containerPort: 8080
+      nodeSelector:
+        kubernetes.io/hostname: jetson
