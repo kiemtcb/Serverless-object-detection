@@ -24,7 +24,7 @@ build:
     stage: build
     script:
         - docker --version
-        - docker build -t $DOCKER_USER/detection-object:4.5x86 -f Dockerfile .
+        - docker build -t kiemtcb/detection-object:4.5x86 --network=host -f Dockerfile .
     tags:
         - jetson
 push_image:
