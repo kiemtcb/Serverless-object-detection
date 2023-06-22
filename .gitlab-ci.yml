@@ -26,12 +26,12 @@ build:
         - docker --version
         - docker build -t $DOCKER_USER/detection-object:4.5x86 -f Dockerfile .
     tags:
-        - mec
+        - jetson
 push_image:
     stage: push_image
     script:
         - docker login -u $DOCKER_USER -p $DOCKER_PASS
         - docker push $DOCKER_USER/detection-object:4.5x86
     tags:
-        - mec
+        - jetson
 
