@@ -66,7 +66,7 @@ if __name__ == "__main__":
             filename = "3G.csv"
         case "wifi":
             delay = 5
-            jitter = 0
+            jitter = 1
             burst = 3500
             filename = "wifi.csv"
     print(filename, delay, jitter)
