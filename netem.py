@@ -40,7 +40,7 @@ def TC(namefile, rootInterface, firstInterface, secondInterface, delay, jitter, 
                 os.system(
                     f'sudo tc qdisc change dev {secondInterface} root handle 1: tbf rate {DL_bitrate}mbit burst {burst}Kb lat 1ms')
                 os.system(f'sudo tc qdisc show dev {rootInterface}')
-                time.sleep(3)
+                time.sleep(1)
 
 
 if __name__ == "__main__":
