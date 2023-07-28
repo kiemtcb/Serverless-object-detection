@@ -19,6 +19,7 @@ def TC(namefile, rootInterface, firstInterface, secondInterface, delay, jitter, 
                     DL_bitrate = 150
                 else:
                     if row[12] == '':
+                        line_count = 1
                         break
                     DL_bitrate = float(row[12])/1000
                 if line_count == 0:
