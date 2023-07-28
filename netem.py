@@ -18,6 +18,8 @@ def TC(namefile, rootInterface, firstInterface, secondInterface, delay, jitter, 
                 if namefile == "wifi.csv":
                     DL_bitrate = 150
                 else:
+                    if row[12] == '':
+                        break
                     DL_bitrate = float(row[12])/1000
                 if line_count == 0:
                     os.system(
