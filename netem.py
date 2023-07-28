@@ -10,10 +10,10 @@ def TC(namefile, rootInterface, firstInterface, secondInterface, delay, jitter, 
     os.system(f'sudo tc qdisc del dev {rootInterface} root')
     os.system(f'sudo tc qdisc del dev {firstInterface} root')
     os.system(f'sudo tc qdisc del dev {secondInterface} root')
+    line_count = 0
     while True:
         with open(namefile) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
-            line_count = 0
             for row in csv_reader:
                 if row[12] == '':
                     line_count = 1
