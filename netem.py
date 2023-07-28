@@ -15,12 +15,12 @@ def TC(namefile, rootInterface, firstInterface, secondInterface, delay, jitter, 
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0
             for row in csv_reader:
+                if row[12] == '':
+                    line_count = 1
+                    break
                 if namefile == "wifi.csv":
                     DL_bitrate = 150
                 else:
-                    if row[12] == '':
-                        line_count = 1
-                        break
                     DL_bitrate = float(row[12])/1000
                 if line_count == 0:
                     os.system(
